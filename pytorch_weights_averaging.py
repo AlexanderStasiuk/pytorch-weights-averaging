@@ -23,7 +23,7 @@ def average_snapshots(list_of_snapshots_paths):
                 custom_params += snapshot_params[name].data
         dict_params[name].data.copy_(custom_params/N)
 
-    model_dict = model.model.state_dict()
+    model_dict = model.state_dict()
     model_dict.update(dict_params)
 
     model.load_state_dict(model_dict)
